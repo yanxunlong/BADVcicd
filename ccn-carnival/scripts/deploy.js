@@ -7,5 +7,6 @@ async function main() {
 
 main().catch((error) => {
   console.error(error);
+  console.log("cool")
   process.exitCode = 1;
 });
