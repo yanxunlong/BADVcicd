@@ -1,12 +1,17 @@
+const hre = require("hardhat");
+
 async function main() {
-  const Carnival = await ethers.getContractFactory("CCNCarnival");
+  const Carnival = await hre.ethers.getContractFactory("CCNCarnival");
   const carnival = await Carnival.deploy();
-  await carnival.deployed();
-  console.log(`CCNCarnival deployed to: ${carnival.address}`);
+
+  await carnival.waitForDeployment();
+
+  console.log("CCNCarnival deployed to:", await carnival.getAddress());
 }
 
-main().catch((error) => {
-  console.error(error);
-  console.log("cool")
-  process.exitCode = 1;
-});
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
