@@ -19,7 +19,7 @@ jobs:
       - run: npx hardhat compile
       - run: npx hardhat test
       - name: Coverage
-        run: npx hardhat coverage --temp artifacts-coverage --network hardhat
+        run: npx hardhat coverage
 
   deploy:
     if: github.ref == 'refs/heads/main'
