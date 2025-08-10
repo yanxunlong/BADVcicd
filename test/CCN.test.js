@@ -46,7 +46,7 @@ describe("CCNCarnival", function () {
     }
   });
 
-  it("Should allow withdrawals after event ends", async function () {
+  it("Should allo1 withdrawals after event ends", async function () {
     await carnival.registerStall("Food Stall", 1);
     await carnival.connect(user1).payToStall(1, { value: parseEther("1") });
 
