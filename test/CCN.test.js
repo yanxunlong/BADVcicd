@@ -12,7 +12,7 @@ describe("CCNCarnival", function () {
   });
 
 
-  it("Should register a stall", async function () {
+  it("Should register a stall1", async function () {
     await carnival.registerStall("Food Stall", 3);
     await expect(carnival.registerStall("Bad", 0))
     .to.be.revertedWith("Invalid duration");
